@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Leonida Legend — GTA VI Trophy Guide &amp; Tracker</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="masthead">
+  <div class="masthead-inner">
+    <div class="brand">
+      <div class="brand-mark" aria-hidden="true">LL</div>
+      <div>
+        <h1>Leonida Legend</h1>
+        <p class="tagline">The GTA VI trophy guide &amp; tracker — every one of the 55 PlayStation 5 trophies, cited step by step.</p>
+      </div>
+    </div>
+    <div class="progress-box">
+      <div class="progress-numbers"><span id="earned-count">0</span><span class="dim"> / 55 earned</span></div>
+      <div class="progress-bar"><div id="progress-fill"></div></div>
+      <div class="progress-meta">
+        <span id="progress-pct">0%</span>
+        <span class="dot">·</span>
+        <span id="eta-line">Platinum ETA —</span>
+      </div>
+    </div>
+  </div>
+  <div class="audit-strip" id="audit-strip" title="Audit: what backs this guide"></div>
+</header>
+
+<nav class="view-tabs" role="tablist">
+  <button class="tab active" data-view="checklist" role="tab">Checklist</button>
+  <button class="tab" data-view="roadmap" role="tab">Roadmap to Platinum</button>
+  <button class="tab" data-view="sources" role="tab">Sources</button>
+  <button class="tab" data-view="disputes" role="tab">Disputes Resolved</button>
+  <span class="tab-spacer"></span>
+  <button class="tool-btn" id="export-btn">Export progress</button>
+  <label class="tool-btn" for="import-file">Import progress</label>
+  <input type="file" id="import-file" accept="application/json" hidden>
+  <button class="tool-btn danger" id="reset-btn">Reset</button>
+</nav>
+
+<section id="view-checklist" class="view active">
+  <div class="toolbar">
+    <input type="search" id="search" placeholder="Search trophies, missions, places…" aria-label="Search trophies">
+    <div class="chip-row" id="kind-chips">
+      <button class="chip active" data-kind="all">All kinds</button>
+      <button class="chip" data-kind="story">Story</button>
+      <button class="chip warn" data-kind="missable">Missable</button>
+      <button class="chip" data-kind="collectibles">Collectibles</button>
+      <button class="chip" data-kind="activities">Activities</button>
+      <button class="chip" data-kind="partner">Partner</button>
+    </div>
+    <div class="chip-row" id="grade-chips">
+      <button class="chip active" data-grade="all">All grades</button>
+      <button class="chip grade-platinum" data-grade="platinum">Platinum</button>
+      <button class="chip grade-gold" data-grade="gold">Gold</button>
+      <button class="chip grade-silver" data-grade="silver">Silver</button>
+      <button class="chip grade-bronze" data-grade="bronze">Bronze</button>
+    </div>
+    <label class="select-wrap">Sort
+      <select id="sort">
+        <option value="roadmap">Roadmap order</option>
+        <option value="grade">Grade (rarest first)</option>
+        <option value="name">Name A–Z</option>
+        <option value="time">Quickest first</option>
+        <option value="difficulty">Easiest first</option>
+      </select>
+    </label>
+    <label class="switch"><input type="checkbox" id="spoiler-toggle"> Spoiler shield</label>
+    <label class="switch"><input type="checkbox" id="hide-earned"> Hide earned</label>
+  </div>
+  <p class="result-line" id="result-line"></p>
+  <main class="layout">
+    <ul class="trophy-list" id="trophy-list"></ul>
+    <article class="detail" id="detail" aria-live="polite"></article>
+  </main>
+</section>
+
+<section id="view-roadmap" class="view">
+  <h2 class="view-title">Roadmap to the Platinum</h2>
+  <p class="view-lede">Seven stages, in the order that keeps every missable safe. Work a stage top to bottom; the missable flags inside a stage must be cleared before that stage's point of no return.</p>
+  <div id="roadmap-list"></div>
+</section>
+
+<section id="view-sources" class="view">
+  <h2 class="view-title">Sources</h2>
+  <p class="view-lede">Every step in every guide carries a tag like [S7]. This is the full list those tags point at — the official list first, then the wikis, guides, videos and forum threads the steps were cross-checked against. A source is cited, never copied: all guide text here is written for this entry.</p>
+  <ol id="source-list" class="source-list"></ol>
+</section>
+
+<section id="view-disputes" class="view">
+  <h2 class="view-title">Disputes Resolved</h2>
+  <p class="view-lede">Where sources disagreed — a count, a window, a trigger — the disagreement and the ruling are written down here instead of being silently averaged. The official PlayStation descriptions win every tie.</p>
+  <div id="dispute-list"></div>
+</section>
+
+<footer class="colophon">
+  <p>Leonida Legend is an unofficial fan guide. Trophy names and descriptions are as PlayStation publishes them; all guide text, steps and rulings are original to this entry. Progress is stored only in your browser (localStorage) — export it to keep a backup.</p>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
